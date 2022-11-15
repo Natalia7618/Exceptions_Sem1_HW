@@ -1,5 +1,7 @@
 import java.util.*;
 
+import javax.sound.sampled.SourceDataLine;
+
 public class Main 
 {
     public static void main(String[] args)
@@ -33,16 +35,19 @@ public class Main
         System.out.println ("Задание 2");
         try
         {
-        int[] array1 = {11, 12, 53, 74, 55, 96, 77, 88};
-        int[] array2 = {50, 12, 22, 34, 35, 26, 11, 25, 83};
-        System.out.println("Массив 1: " + Arrays.toString(array1));
-        System.out.println("Массив 2: " + Arrays.toString(array2));
-        System.out.println("Полученный массив" + ArrayDiff(array1, array2));
+            int[] array1 = {11, 12, 53, 74, 55, 96, 77, 88};
+            int[] array2 = {50, 12, 22, 34, 35, 26, 11, 25, 83};
+            System.out.println("Массив 1: " + Arrays.toString(array1));
+            System.out.println("Массив 2: " + Arrays.toString(array2));
+            System.out.println("Полученный массив" + ArrayDiff(array1, array2));
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
         }
+        //System.out.println("Функция #4: " + ArifmeticException(10));
+        System.out.println("Функция #5: " + NullPointerException(null));
+                
     }
 
     // Функция #1 для вставки элемента на первое место в массиве 
@@ -78,7 +83,6 @@ public class Main
     }
 
     // Функция #3 для обновления третьего элемента массива 
-
     public static void UpdateArrayThirdElement(int i) throws Exception
     {        
         if (i != 2)
@@ -93,13 +97,24 @@ public class Main
         list_Color.set(i, "Пурпурный");
         System.out.println ("Полученный массив: " + list_Color);
     }
-
+    // Функция #4 - нельзя делить на ноль 
+    public static int ArifmeticException(int i)
+    {
+        return i/0;
+    } 
+    
+    // Функция #5 - обращение к несуществующему объекту 
+    public static int NullPointerException(String str)
+    {
+        return str.length();
+    } 
+    
     // Задание #2 - Реализуйте метод, принимающий в качестве аргументов два целочисленных массива, и возвращающий новый массив, 
     // каждый элемент которого равен разности элементов двух входящих массивов в той же ячейке. 
     // Если длины массивов не равны, необходимо как-то оповестить пользователя.
     
-        public static ArrayList<Integer> ArrayDiff (int[] a1, int[] a2) throws Exception
-        {
+    public static ArrayList<Integer> ArrayDiff (int[] a1, int[] a2) throws Exception
+    {
         int min = Math.min(a1.length, a2.length);
         int max = Math.max(a1.length, a2.length);
         {
@@ -111,9 +126,9 @@ public class Main
         
         ArrayList<Integer> result = new ArrayList<>();                 
         for (int i = 0; i < min; i++) 
-            {
-                result.add(a1[i] - a2[i]);
-            }
-            return result;
+        {
+            result.add(a1[i] - a2[i]);
         }
+        return result;
+    }
 }
