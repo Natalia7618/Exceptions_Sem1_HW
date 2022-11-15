@@ -32,6 +32,9 @@ public class Main
             System.out.println(e.getMessage());
         }
 
+        //System.out.println("Функция #4: " + ArifmeticException(10));
+        //System.out.println("Функция #5: " + NullPointerException(null));
+
         System.out.println ("Задание 2");
         try
         {
@@ -45,8 +48,7 @@ public class Main
         {
             System.out.println(e.getMessage());
         }
-        //System.out.println("Функция #4: " + ArifmeticException(10));
-        System.out.println("Функция #5: " + NullPointerException(null));
+        
                 
     }
 
